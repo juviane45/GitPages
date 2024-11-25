@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manipulação de Arrays</title>
-  <script src="script.js" defer></script>
 </head>
 <body>
   <h1>Array de Linguagens</h1>
@@ -30,15 +29,20 @@
   
 <script>
   let linguagens = [];
-  linguagens[0] = 'Dart';
-  linguagens[1] = 'PHP';
-  linguagens[2] = 'Java';
-  linguagens[3] = 'Python';
-  linguagens[4] = 'Perl';
-  linguagens[5] = 'Ruby on Rails';
-  linguagens[6] = 'C++';
+  let frutas = [];
+
+  function inicializarLinguagens() {
+    linguagens = ['Dart', 'PHP', 'Java', 'Python', 'Perl', 'Ruby on Rails', 'C++'];
+  }
+
+  function inicializarFrutas() {
+    frutas = ['Maçã', 'Banana', 'Laranja', 'Manga', 'Uva', 'Abacaxi', 'Morango'];
+  }
 
   function mostrarListaLinguagens() {
+    if (linguagens.length === 0) {
+      inicializarLinguagens(); // Recria o array se estiver vazio
+    }
     const container = document.getElementById("minhaDiv");
     container.innerHTML = ''; // Limpa antes de mostrar a lista
     for (var i = 0; i < linguagens.length; i++) {
@@ -63,16 +67,10 @@
     document.getElementById("minhaDiv").innerHTML = ''; // Atualiza visualmente
   }
 
-  let frutas = [];
-  frutas[0] = 'Maçã';
-  frutas[1] = 'Banana';
-  frutas[2] = 'Laranja';
-  frutas[3] = 'Manga';
-  frutas[4] = 'Uva';
-  frutas[5] = 'Abacaxi';
-  frutas[6] = 'Morango';
-
   function mostrarListaFrutas() {
+    if (frutas.length === 0) {
+      inicializarFrutas(); // Recria o array se estiver vazio
+    }
     const container = document.getElementById("minhaDivFrutas");
     container.innerHTML = ''; // Limpa antes de mostrar a lista
     for (var i = 0; i < frutas.length; i++) {
